@@ -249,3 +249,13 @@ background-color: #2980b9;
 background-color: #bdbdbd;
 cursor: not-allowed;
 }
+
+.google-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    margin-bottom:10px;
+}
