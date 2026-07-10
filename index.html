@@ -25,9 +25,9 @@
 <div class="form-control">
     <label>Google Account</label>
 
-    <button type="button" id="googleBtn" class="google-btn">
-        Sign in with Google
-    </button>
+    <button type="button" id="googleBtn" class="google-btn" onclick="googleLogin()">
+    Sign in with Google
+</button>
 
     <input type="text" id="email" readonly
            placeholder="Sign in with Google first">
@@ -87,6 +87,41 @@
 </form>
 </div>
 
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA_ZYwA2il9pZLsgSnY09VQg3PLeZsQfn8",
+  authDomain: "odrs-booking.firebaseapp.com",
+  projectId: "odrs-booking",
+  storageBucket: "odrs-booking.firebasestorage.app",
+  messagingSenderId: "1118712128480",
+  appId: "1:118712128480:web:307465bf5d52b15bcc5185",
+  measurementId: "G-5W22RXPE2S"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+window.googleLogin = async function () {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+
+    document.getElementById("name").value = user.displayName.toUpperCase();
+    document.getElementById("email").value = user.email;
+    document.getElementById("loginStatus").innerHTML = "✅ Google Account Verified";
+
+    localStorage.setItem("odrsName", user.displayName);
+    localStorage.setItem("odrsEmail", user.email);
+  } catch (err) {
+    alert(err.message);
+  }
+};
+</script>
+    
 <script src="script.js"></script>
 
 </body>
