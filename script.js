@@ -48,6 +48,17 @@ if(
     alert('Please enter a genuine mobile number');
     return;
 }
+    // Reject if one digit appears 9 or more times
+const digitCount = {};
+
+for (const digit of phone) {
+    digitCount[digit] = (digitCount[digit] || 0) + 1;
+}
+
+if (Math.max(...Object.values(digitCount)) >= 8) {
+    alert('Please enter a genuine mobile number');
+    return;
+}
 
     localStorage.setItem('odrsName', name);
     localStorage.setItem('odrsEmail', email);
