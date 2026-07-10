@@ -23,9 +23,16 @@
 </div>
 
 <div class="form-control">
-<label>Email</label>
-<input type="email" id="email" placeholder="Enter Your Email">
-<small>Error message</small>
+    <label>Google Account</label>
+
+    <button type="button" id="googleBtn" class="google-btn">
+        Sign in with Google
+    </button>
+
+    <input type="text" id="email" readonly
+           placeholder="Sign in with Google first">
+
+    <small id="loginStatus"></small>
 </div>
 
 <div class="form-control">
