@@ -10,35 +10,26 @@ form.addEventListener('submit', function(e){
     const offer = document.getElementById('offer').value;
     const dept = document.getElementById('dept').value.trim();
 
-    if(name === '' || email === '' || phone === '' || offer === '' || dept === ''){
+    // Must sign in with Google
+    if(email === ''){
+        alert('Please Sign in with Google first');
+        return;
+    }
+
+    if(name === '' || phone === '' || offer === '' || dept === ''){
         alert('Please fill all details');
         return;
     }
 
-    // Gmail validation
-    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-
-    if (!gmailRegex.test(email)) {
-        alert("Only Gmail addresses are allowed.");
-        return;
-    }
-
-    // Reject obvious fake Gmail IDs
-    const username = email.split("@")[0];
-
-    if (
-        username.length < 4 ||
-        /^([a-zA-Z])\1+$/.test(username) || // gggggg@gmail.com
-        username.toLowerCase() === "test" ||
-        username.toLowerCase() === "fake"
-    ) {
-        alert("Please enter a valid Gmail address.");
+    // Allow only Gmail accounts from Google Sign-In
+    if(!email.endsWith('@gmail.com')){
+        alert('Only Gmail accounts are allowed');
         return;
     }
 
     // Phone validation
-    if (!/^[0-9]{10}$/.test(phone)) {
-        alert("Please enter a valid 10-digit mobile number");
+    if(!/^[0-9]{10}$/.test(phone)){
+        alert('Please enter a valid 10-digit mobile number');
         return;
     }
 
