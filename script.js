@@ -42,6 +42,13 @@ if(/^(\d)\1{9}$/.test(phone)){
 // Reject common fake numbers
 if(
     phone === '1234567890' ||
+    phone === '7345678902' ||
+    phone === '9123456780' ||
+    phone === '1122222222' ||
+    phone === '1222222222' ||
+    phone === '0122222222' ||
+    phone === '8234567891' ||
+    phone === '1234444444' ||
     phone === '0123456789' ||
     phone === '9876543210'
 ){
@@ -66,6 +73,6 @@ if (Math.max(...Object.values(digitCount)) >= 8) {
     localStorage.setItem('odrsOffer', offer);
     localStorage.setItem('odrsDept', dept);
 
-    window.location.href = 'payment.html';
+    window.location.href = '/payment';
 
 });
