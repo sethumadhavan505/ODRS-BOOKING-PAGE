@@ -48,6 +48,25 @@
     <small>Error message</small>
 </div>
 
+
+<!-- Quantity -->
+<div class="input-group">
+    <label for="quantity">Quantity</label>
+    <select id="quantity" name="quantity" required>
+        <option value="">Select Quantity</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+</div>
+
 <div class="form-control">
     <label for="offer">Select Offer</label>
     <select id="offer">
@@ -86,12 +105,50 @@
     </select>
 </div>
 
-<div class="form-control">
-<label>Branch & Dept</label>
-<input type="text" id="dept" placeholder="Fill Your Detail">
-<small>Error message</small>
+
+<!-- College Name -->
+<div class="input-group">
+    <label for="college">College</label>
+    <select id="college" name="college" required onchange="toggleCollege()">
+        <option value="">Select College</option>
+        <option value="ST. JOSEPH'S INSTITUTE OF TECHNOLOGY">ST. JOSEPH'S INSTITUTE OF TECHNOLOGY</option>
+        <option value="ST. JOSEPH'S COLLEGE OF ENGINEERING">ST. JOSEPH'S COLLEGE OF ENGINEERING</option>
+        <option value="Others">Others (Mention Below)</option>
+    </select>
+    <small>Please select your college.</small>
 </div>
 
+<!-- Other College -->
+<div class="input-group" id="otherCollegeGroup" style="display: none;">
+    <label for="otherCollege">Other College Name</label>
+    <input
+        type="text"
+        id="otherCollege"
+        name="otherCollege"
+        placeholder="Enter Your College Name"
+    >
+    <small>Please enter your college name.</small>
+</div>
+
+<div class="input-group">
+    <label for="department">Branch & Degree</label>
+    <select id="department" name="department" required>
+        <option value="">Select Branch & Degree</option>
+        <option value="B.Tech IT">B.Tech IT</option>
+        <option value="B.E CSE">B.E CSE</option>
+        <option value="B.E ECE">B.E ECE</option>
+        <option value="B.E EEE">B.E EEE</option>
+        <option value="B.E MECH">B.E MECH</option>
+        <option value="B.E CIVIL">B.E CIVIL</option>
+        <option value="B.Tech AI & DS">B.Tech AI & DS</option>
+        <option value="B.Tech AI & ML">B.Tech AI & ML</option>
+        <option value="B.Tech Cyber Security">B.Tech Cyber Security</option>
+        <option value="B.Tech Biotechnology">B.Tech Biotechnology</option>
+        <option value="Other">Other</option>
+    </select>
+    <small>Please select your Branch & Degree.</small>
+</div>
+    
 <div class="button-group">
     <button type="button" id="backBtn">Back</button>
     <button type="submit">Next</button>
