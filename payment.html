@@ -67,15 +67,14 @@ document.getElementById("payBtn").addEventListener("click", function () {
     const dept = localStorage.getItem("odrsDept");
 
     const templateParams = {
-        name,
-        email,
-        phone,
-        offer,
-        quantity,
-        college,
-        dept
+        name: name,
+        email: email,
+        phone: phone,
+        offer: offer,
+        quantity: quantity,
+        college: college,
+        dept: dept
     };
-
     emailjs.send(
         "service_zxt5qcd",
         "template_w77svvi",
