@@ -76,3 +76,18 @@ if (Math.max(...Object.values(digitCount)) >= 8) {
     window.location.href = '/payment';
 
 });
+
+function toggleCollege() {
+    const college = document.getElementById("college");
+    const otherGroup = document.getElementById("otherCollegeGroup");
+    const otherCollege = document.getElementById("otherCollege");
+
+    if (college.value === "Others") {
+        otherGroup.style.display = "block";
+        otherCollege.required = true;
+    } else {
+        otherGroup.style.display = "none";
+        otherCollege.required = false;
+        otherCollege.value = "";
+    }
+}
