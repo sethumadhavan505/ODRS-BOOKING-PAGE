@@ -58,6 +58,8 @@ document.getElementById("payBtn").addEventListener("click", function () {
     const email = localStorage.getItem("odrsEmail");
     const phone = localStorage.getItem("odrsPhone");
     const offer = localStorage.getItem("odrsOffer");
+    const quantity = localStorage.getItem("odrsQuantity");
+    const college = localStorage.getItem("odrsCollege");
     const dept = localStorage.getItem("odrsDept");
 
     const templateParams = {
@@ -90,13 +92,13 @@ document.getElementById("payBtn").addEventListener("click", function () {
 
     .then(function () {
 
-        alert("ODRS TEAM WILL CONTACT YOU");
+    alert("ODRS TEAM WILL CONTACT YOU");
 
-        localStorage.clear();
+    localStorage.clear();
 
-        window.location.href = "/";
+    window.location.href = "/thankyou";
 
-    })
+})
 
     .catch(function (error) {
 
