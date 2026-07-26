@@ -114,7 +114,7 @@ form.addEventListener("submit", function (e) {
     }
 
     // Redirect
-    window.location.href = "payment.html";
+    window.location.href = "/payment";
 });
 
 
