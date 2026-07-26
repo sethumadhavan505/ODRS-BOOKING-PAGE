@@ -259,3 +259,29 @@ cursor: not-allowed;
     font-size:16px;
     margin-bottom:10px;
 }
+
+.thankyou-box{
+    text-align:center;
+}
+
+.success-icon{
+    font-size:80px;
+    margin-bottom:20px;
+}
+
+.thankyou-box h2{
+    color:#28a745;
+    margin-bottom:15px;
+}
+
+.thankyou-box p{
+    color:#555;
+    margin:12px 0;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.thankyou-box button{
+    margin-top:25px;
+    width:100%;
+}
