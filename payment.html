@@ -54,6 +54,10 @@ checkbox.addEventListener("change", function () {
 
 document.getElementById("payBtn").addEventListener("click", function () {
 
+    // Prevent multiple clicks
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Submitting...";
+
     const name = localStorage.getItem("odrsName");
     const email = localStorage.getItem("odrsEmail");
     const phone = localStorage.getItem("odrsPhone");
@@ -63,24 +67,21 @@ document.getElementById("payBtn").addEventListener("click", function () {
     const dept = localStorage.getItem("odrsDept");
 
     const templateParams = {
-        name: name,
-        email: email,
-        phone: phone,
-        offer: offer,
-        dept: dept
+        name,
+        email,
+        phone,
+        offer,
+        quantity,
+        college,
+        dept
     };
-
-    // Send booking details to ODRS
 
     emailjs.send(
         "service_zxt5qcd",
         "template_w77svvi",
         templateParams
     )
-
     .then(function () {
-
-        // Send confirmation email to student
 
         return emailjs.send(
             "service_zxt5qcd",
@@ -89,20 +90,23 @@ document.getElementById("payBtn").addEventListener("click", function () {
         );
 
     })
-
     .then(function () {
 
-    localStorage.clear();
+        localStorage.clear();
 
-    window.location.href = "thankyou.html";
+        // Redirect after successful submission
+        window.location.href = "/thankyou";
 
-})
-
+    })
     .catch(function (error) {
 
         console.error(error);
 
         alert("Failed to send email. Please try again.");
+
+        // Re-enable button if sending fails
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Submit";
 
     });
 
