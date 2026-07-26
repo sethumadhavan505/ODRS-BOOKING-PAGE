@@ -48,25 +48,6 @@
     <small>Error message</small>
 </div>
 
-
-<!-- Quantity -->
-<div class="input-group">
-    <label for="quantity">Quantity</label>
-    <select id="quantity" name="quantity" required>
-        <option value="">Select Quantity</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-    </select>
-</div>
-
 <div class="form-control">
     <label for="offer">Select Offer</label>
     <select id="offer">
@@ -105,11 +86,29 @@
     </select>
 </div>
 
-
-<!-- College Name -->
-<div class="input-group">
+<!-- Quantity -->
+<div class="form-control">
+    <label for="quantity">Quantity</label>
+    <select id="quantity">
+        <option value="">Select Quantity</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <small>Please select quantity.</small>
+</div>
+    
+<!-- College -->
+<div class="form-control">
     <label for="college">College</label>
-    <select id="college" name="college" required onchange="toggleCollege()">
+    <select id="college" onchange="toggleCollege()">
         <option value="">Select College</option>
         <option value="ST. JOSEPH'S INSTITUTE OF TECHNOLOGY">ST. JOSEPH'S INSTITUTE OF TECHNOLOGY</option>
         <option value="ST. JOSEPH'S COLLEGE OF ENGINEERING">ST. JOSEPH'S COLLEGE OF ENGINEERING</option>
@@ -119,20 +118,20 @@
 </div>
 
 <!-- Other College -->
-<div class="input-group" id="otherCollegeGroup" style="display: none;">
+<div class="form-control" id="otherCollegeGroup" style="display: none;">
     <label for="otherCollege">Other College Name</label>
     <input
         type="text"
         id="otherCollege"
-        name="otherCollege"
         placeholder="Enter Your College Name"
     >
     <small>Please enter your college name.</small>
 </div>
 
-<div class="input-group">
+<!-- Branch & Degree -->
+<div class="form-control">
     <label for="department">Branch & Degree</label>
-    <select id="department" name="department" required>
+    <select id="department">
         <option value="">Select Branch & Degree</option>
         <option value="B.Tech IT">B.Tech IT</option>
         <option value="B.E CSE">B.E CSE</option>
