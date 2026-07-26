@@ -91,3 +91,18 @@ function toggleCollege() {
         otherCollege.value = "";
     }
 }
+
+function toggleDepartment() {
+    const department = document.getElementById("department");
+    const otherGroup = document.getElementById("otherDepartmentGroup");
+    const otherDepartment = document.getElementById("otherDepartment");
+
+    if (department.value === "Other") {
+        otherGroup.style.display = "block";
+        otherDepartment.required = true;
+    } else {
+        otherGroup.style.display = "none";
+        otherDepartment.required = false;
+        otherDepartment.value = "";
+    }
+}
