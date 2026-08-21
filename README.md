@@ -22,7 +22,9 @@ Users can register for ODRS services, complete payment using a QR code, and rece
 | GitHub 50+ Star | ₹150 |
 | Portfolio Build | ₹300 |
 | Resume Build | ₹100 |
-| Coding ID Sale | ₹600 |
+| CodeChef Coding ID Sale | ₹600 |
+| AtCoder Coding ID Sale | ₹600 |
+| CodeForces Coding ID Sale | ₹800 |
 | IEEE Paper Sale | ₹5000 |
 ---
 
